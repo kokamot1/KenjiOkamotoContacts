@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.LinearLayout;
 
@@ -16,7 +17,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         LinearLayout results =  (LinearLayout) findViewById(R.id.resultsDisplay);
-//        results.setVisibility(View.INVISIBLE);
+        results.setVisibility(View.GONE);
     }
 
     public void onSaveButtonClick(View v) {
@@ -26,12 +27,27 @@ public class MainActivity extends ActionBarActivity {
         TextView nameTextView = (TextView) findViewById(R.id.nameTextView);
         TextView emailTextView = (TextView) findViewById(R.id.emailTextView);
         TextView phoneTextView = (TextView) findViewById(R.id.phoneTextView);
+        TextView landOrCellTextView = (TextView) findViewById(R.id.landOrCellTextView);
 
         nameTextView.setText(nameEditText.getText());
         emailTextView.setText(emailEditText.getText());
         phoneTextView.setText(phoneEditText.getText());
+        landOrCellTextView.setText(this.getLineType());
+
         LinearLayout results =  (LinearLayout) findViewById(R.id.resultsDisplay);
         results.setVisibility(View.VISIBLE);
+    }
+
+    private String getLineType() {
+        String result = "";
+        RadioButton landlineBtn = (RadioButton) findViewById(R.id.landlineBtn);
+        RadioButton cellBtn = (RadioButton) findViewById(R.id.landlineBtn);
+        if (landlineBtn.isChecked()) {
+            result = "Land Line";
+        } else if (cellBtn.isChecked()) {
+            result = "Cell Phone";
+        }
+        return result;
     }
 
     @Override
