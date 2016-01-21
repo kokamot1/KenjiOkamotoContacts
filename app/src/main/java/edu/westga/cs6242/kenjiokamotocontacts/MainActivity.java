@@ -4,6 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.LinearLayout;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -11,6 +15,23 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        LinearLayout results =  (LinearLayout) findViewById(R.id.resultsDisplay);
+//        results.setVisibility(View.INVISIBLE);
+    }
+
+    public void onSaveButtonClick(View v) {
+        EditText nameEditText = (EditText) findViewById(R.id.nameEditText);
+        EditText emailEditText = (EditText) findViewById(R.id.emailEditText);
+        EditText phoneEditText = (EditText) findViewById(R.id.phoneEditText);
+        TextView nameTextView = (TextView) findViewById(R.id.nameTextView);
+        TextView emailTextView = (TextView) findViewById(R.id.emailTextView);
+        TextView phoneTextView = (TextView) findViewById(R.id.phoneTextView);
+
+        nameTextView.setText(nameEditText.getText());
+        emailTextView.setText(emailEditText.getText());
+        phoneTextView.setText(phoneEditText.getText());
+        LinearLayout results =  (LinearLayout) findViewById(R.id.resultsDisplay);
+        results.setVisibility(View.VISIBLE);
     }
 
     @Override
