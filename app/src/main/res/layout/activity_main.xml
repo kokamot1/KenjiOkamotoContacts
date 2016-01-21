@@ -130,4 +130,60 @@
         android:layout_below="@+id/radioGroup"
         android:layout_centerHorizontal="true" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/holo_blue_dark"
+        android:id="@+id/dividerLine"
+        android:layout_below="@+id/saveButton"
+        android:layout_marginTop="25dp"
+        />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultsDisplay"
+        android:layout_below="@+id/dividerLine"
+        android:layout_marginTop="25dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="You Entered"
+            android:id="@+id/textView4"
+            android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Name"
+                android:id="@+id/nameTextView"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Email"
+                android:id="@+id/emailTextView"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Phone"
+                android:id="@+id/phoneTextView"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal" />
+
+
+
+    </LinearLayout>
+
 </RelativeLayout>
