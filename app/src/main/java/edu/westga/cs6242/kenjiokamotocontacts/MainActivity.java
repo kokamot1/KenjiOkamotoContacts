@@ -34,14 +34,14 @@ public class MainActivity extends ActionBarActivity {
         phoneTextView.setText(phoneEditText.getText());
         landOrCellTextView.setText(this.getLineType());
 
-        LinearLayout results =  (LinearLayout) findViewById(R.id.resultsDisplay);
+        LinearLayout results = (LinearLayout) findViewById(R.id.resultsDisplay);
         results.setVisibility(View.VISIBLE);
     }
 
     private String getLineType() {
         String result = "";
         RadioButton landlineBtn = (RadioButton) findViewById(R.id.landlineBtn);
-        RadioButton cellBtn = (RadioButton) findViewById(R.id.landlineBtn);
+        RadioButton cellBtn = (RadioButton) findViewById(R.id.cellBtn);
         if (landlineBtn.isChecked()) {
             result = "Land Line";
         } else if (cellBtn.isChecked()) {
