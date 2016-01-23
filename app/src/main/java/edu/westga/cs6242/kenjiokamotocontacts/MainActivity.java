@@ -5,10 +5,11 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.LinearLayout;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -16,7 +17,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        LinearLayout results =  (LinearLayout) findViewById(R.id.resultsDisplay);
+        ViewGroup results =  (ViewGroup) findViewById(R.id.resultsDisplay);
         results.setVisibility(View.GONE);
     }
 
@@ -34,7 +35,7 @@ public class MainActivity extends ActionBarActivity {
         phoneTextView.setText(phoneEditText.getText());
         landOrCellTextView.setText(this.getLineType());
 
-        LinearLayout results = (LinearLayout) findViewById(R.id.resultsDisplay);
+        ViewGroup results =  (ViewGroup) findViewById(R.id.resultsDisplay);
         results.setVisibility(View.VISIBLE);
     }
 
