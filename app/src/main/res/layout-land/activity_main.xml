@@ -3,75 +3,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.westga.cs6242.kenjiokamotocontacts.MainActivity">
 
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-
-    <!--<LinearLayout-->
-        <!--android:orientation="vertical"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content">-->
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/formLayout">
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/formLayout"
+            android:visibility="visible"
+            android:gravity="center_vertical|center_horizontal">
 
             <TextView
+                android:id="@+id/formNameLabel"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Name"
-               android:id="@+id/formNameLabel"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
+                android:gravity="right"
                 android:layout_alignParentTop="true"
-                android:gravity="right"/>
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
 
             <EditText
+                android:id="@+id/nameEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:ems="10"
-                android:id="@+id/nameEditText"
-                android:layout_alignBaseline="@+id/formNameLabel"
                 android:layout_toRightOf="@+id/formNameLabel"
                 android:layout_toEndOf="@+id/formNameLabel"
-                android:layout_marginLeft="10dp" />
+                android:layout_alignBaseline="@+id/formNameLabel"
+                android:layout_marginLeft="20dp" />
+
+
 
 
             <TextView
+                android:id="@+id/formEmailLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Email"
-                android:id="@+id/formEmailLabel"
                 android:gravity="right"
                 android:layout_below="@+id/formNameLabel"
                 android:layout_alignRight="@+id/formNameLabel"
                 android:layout_alignEnd="@+id/formNameLabel"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="25dp" />
 
             <EditText
+                android:id="@+id/emailEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:ems="10"
-                android:id="@+id/emailEditText"
-                android:layout_below="@+id/nameEditText"
-                android:layout_alignLeft="@+id/nameEditText"
-                android:layout_alignStart="@+id/nameEditText" />
+                android:layout_toRightOf="@+id/formEmailLabel"
+                android:layout_toEndOf="@+id/formEmailLabel"
+                android:layout_alignBaseline="@+id/formEmailLabel"
+                android:layout_marginLeft="20dp" />
+
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -81,9 +71,9 @@
                 android:id="@+id/formPhoneLabel"
                 android:gravity="right"
                 android:layout_below="@+id/formEmailLabel"
-                android:layout_alignLeft="@+id/formEmailLabel"
-                android:layout_alignStart="@+id/formEmailLabel"
-                android:layout_marginTop="20dp" />
+                android:layout_alignRight="@+id/formEmailLabel"
+                android:layout_alignEnd="@+id/formEmailLabel"
+                android:layout_marginTop="25dp" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -91,10 +81,10 @@
                 android:inputType="phone"
                 android:ems="10"
                 android:id="@+id/phoneEditText"
-
-                android:layout_below="@+id/emailEditText"
-                android:layout_alignLeft="@+id/emailEditText"
-                android:layout_alignStart="@+id/emailEditText" />
+                android:layout_toRightOf="@+id/formPhoneLabel"
+                android:layout_toEndOf="@+id/formPhoneLabel"
+                android:layout_alignBaseline="@+id/formPhoneLabel"
+                android:layout_marginLeft="20dp" />
 
 
             <RadioGroup
@@ -102,10 +92,10 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:id="@+id/radioGroup"
-                android:layout_marginLeft="47dp"
-                android:layout_marginStart="47dp"
+                android:layout_alignParentTop="true"
                 android:layout_toRightOf="@+id/nameEditText"
-                android:layout_toEndOf="@+id/nameEditText">
+                android:layout_toEndOf="@+id/nameEditText"
+                android:layout_marginLeft="20dp">
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -133,37 +123,36 @@
                 android:id="@+id/saveButton"
                 android:onClick="onSaveButtonClick"
                 android:layout_gravity="center_horizontal"
+                android:layout_below="@+id/radioGroup"
                 android:layout_alignLeft="@+id/radioGroup"
                 android:layout_alignStart="@+id/radioGroup"
-                android:layout_below="@+id/radioGroup"
                 android:layout_marginTop="15dp" />
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:id="@+id/resultsDisplay"
             android:layout_below="@+id/formLayout"
-            android:layout_marginTop="10dp" >
+            android:clickable="false"
+            android:visibility="gone"
+            android:gravity="center_vertical|center_horizontal"
+            >
 
-
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="@android:color/holo_blue_dark"
-                android:id="@+id/dividerLine"
-                android:layout_marginTop="25dp"
-                android:layout_gravity="center_horizontal" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="You Entered"
                 android:id="@+id/youEntered"
-                android:layout_below="@+id/dividerLine"
-                android:layout_marginTop="50dp" />
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="@android:color/holo_blue_dark"
+                android:layout_alignParentTop="true"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="@dimen/abc_text_size_headline_material" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -171,11 +160,12 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Name"
                 android:id="@+id/nameTextView"
-                android:layout_toRightOf="@+id/youEntered"
-                android:layout_toEndOf="@+id/youEntered"
-                android:layout_marginLeft="40dp"
-                android:layout_below="@+id/dividerLine"
-                android:layout_marginTop="20dp" />
+                android:layout_marginLeft="174dp"
+                android:layout_marginStart="174dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/youEntered"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
 
             <TextView
                 android:layout_height="wrap_content"
@@ -186,7 +176,7 @@
                 android:layout_below="@+id/nameTextView"
                 android:layout_alignLeft="@+id/nameTextView"
                 android:layout_alignStart="@+id/nameTextView"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="7dp"/>
 
             <TextView
                 android:layout_height="wrap_content"
@@ -197,7 +187,7 @@
                 android:layout_below="@+id/emailTextView"
                 android:layout_alignLeft="@+id/emailTextView"
                 android:layout_alignStart="@+id/emailTextView"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="7dp"/>
 
 
             <TextView
@@ -209,14 +199,19 @@
                 android:layout_below="@+id/phoneTextView"
                 android:layout_alignLeft="@+id/phoneTextView"
                 android:layout_alignStart="@+id/phoneTextView"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="7dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter Another"
+                android:id="@+id/enterAnotherBtn"
+                android:layout_below="@+id/landOrCellTextView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:nestedScrollingEnabled="false"
+                android:onClick="onEnterAnotherButtonClick" />
 
         </RelativeLayout>
 
     </RelativeLayout>
-
-    <!--</LinearLayout>-->
-
-    </ScrollView>
-
-</RelativeLayout>

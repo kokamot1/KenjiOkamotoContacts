@@ -17,8 +17,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ViewGroup results =  (ViewGroup) findViewById(R.id.resultsDisplay);
-        results.setVisibility(View.GONE);
+        this.setResultsVisible(false);
     }
 
     public void onSaveButtonClick(View v) {
@@ -35,9 +34,14 @@ public class MainActivity extends ActionBarActivity {
         phoneTextView.setText(phoneEditText.getText());
         landOrCellTextView.setText(this.getLineType());
 
-        ViewGroup results =  (ViewGroup) findViewById(R.id.resultsDisplay);
-        results.setVisibility(View.VISIBLE);
-        this.hideForm();
+        this.setFormVisible(false);
+        this.setResultsVisible(true);
+    }
+
+    public void onEnterAnotherButtonClick(View v) {
+        this.setResultsVisible(false);
+        this.clearForm();
+        this.setFormVisible(true);
     }
 
     private String getLineType() {
@@ -52,9 +56,36 @@ public class MainActivity extends ActionBarActivity {
         return result;
     }
 
-    private void hideForm() {
-        ViewGroup results =  (ViewGroup) findViewById(R.id.formLayout);
-        results.setVisibility(View.GONE);
+    private void setFormVisible(Boolean showForm) {
+        ViewGroup form =  (ViewGroup) findViewById(R.id.formLayout);
+        if (showForm) {
+            form.setVisibility(View.VISIBLE);
+        } else {
+            form.setVisibility(View.GONE);
+        }
+    }
+
+    private void setResultsVisible(Boolean showResults) {
+        ViewGroup results =  (ViewGroup) findViewById(R.id.resultsDisplay);
+        if (showResults) {
+            results.setVisibility(View.VISIBLE);
+        } else {
+            results.setVisibility(View.GONE);
+        }
+    }
+
+    private  void clearForm() {
+        EditText nameEditText = (EditText) findViewById(R.id.nameEditText);
+        EditText emailEditText = (EditText) findViewById(R.id.emailEditText);
+        EditText phoneEditText = (EditText) findViewById(R.id.phoneEditText);
+        nameEditText.setText("");
+        emailEditText.setText("");
+        phoneEditText.setText("");
+        RadioButton landlineBtn = (RadioButton) findViewById(R.id.landlineBtn);
+        RadioButton cellBtn = (RadioButton) findViewById(R.id.cellBtn);
+        landlineBtn.setChecked(false);
+        cellBtn.setChecked(false);
+
     }
 
     @Override
