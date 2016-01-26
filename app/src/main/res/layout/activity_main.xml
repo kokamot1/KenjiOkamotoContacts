@@ -8,164 +8,166 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.westga.cs6242.kenjiokamotocontacts.MainActivity">
+
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="22dp"
-        android:id="@+id/form">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
-
-            <TextView
-                android:layout_width="65dp"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Name"
-
-                android:id="@+id/textView" />
-
-            <EditText
-                android:layout_marginLeft="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/nameEditText" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
-
-            <TextView
-                android:layout_width="65dp"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Email"
-                android:id="@+id/textView2" />
-
-            <EditText
-                android:layout_marginLeft="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:ems="10"
-                android:id="@+id/emailEditText" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
-
-            <TextView
-                android:layout_width="65dp"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Phone"
-                android:id="@+id/textView3" />
-
-            <EditText
-                android:layout_marginLeft="20dp"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType="phone"
-                android:ems="10"
-                android:id="@+id/phoneEditText" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal">
-
-        </LinearLayout>
-
-        <RadioGroup
-            android:layout_width="240dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/form"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:id="@+id/radioGroup"
-            android:layout_gravity="center_horizontal">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="LandLine"
-                android:id="@+id/landlineBtn"
-                android:layout_weight="1" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cell"
-                android:id="@+id/cellBtn"
-                android:layout_weight="1" />
-        </RadioGroup>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Save"
-            android:id="@+id/saveButton"
-            android:layout_marginTop="16dp"
-            android:layout_below="@+id/radioGroup"
-            android:layout_centerHorizontal="true"
-            android:onClick="onSaveButtonClick"
-            android:layout_gravity="center_horizontal" />
-
-        <LinearLayout
-            android:orientation="vertical"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:id="@+id/resultsDisplay"
-            android:layout_below="@+id/dividerLine"
-            android:layout_marginTop="10dp" >
+            android:layout_height="match_parent">
 
-
-            <View
-                android:layout_width="240dp"
-                android:layout_height="1dp"
-                android:background="@android:color/holo_blue_dark"
-                android:id="@+id/dividerLine"
-                android:layout_below="@+id/saveButton"
-                android:layout_marginTop="25dp"
-                android:layout_gravity="center_horizontal" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="You Entered"
-                android:id="@+id/textView4"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp" />
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="22dp"
+                android:id="@+id/formLayout">
 
-            <TextView
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/nameLayout">
+
+                    <TextView
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Name"
+
+                        android:id="@+id/textView" />
+
+                    <EditText
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/nameEditText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/emailLayout">
+
+                    <TextView
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Email"
+                        android:id="@+id/textView2" />
+
+                    <EditText
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:ems="10"
+                        android:id="@+id/emailEditText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/phoneLayout">
+
+                    <TextView
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Phone"
+                        android:id="@+id/textView3" />
+
+                    <EditText
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:ems="10"
+                        android:id="@+id/phoneEditText" />
+                </LinearLayout>
+
+                <RadioGroup
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/formLayout"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:id="@+id/radioGroup"
+                    android:layout_gravity="center_horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LandLine"
+                        android:id="@+id/landlineBtn"
+                        android:layout_weight="1" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cell"
+                        android:id="@+id/cellBtn"
+                        android:layout_weight="1" />
+                </RadioGroup>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save"
+                    android:id="@+id/saveButton"
+                    android:layout_marginTop="16dp"
+                    android:layout_below="@+id/radioGroup"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="onSaveButtonClick"
+                    android:layout_gravity="center_horizontal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:id="@+id/resultsDisplay"
+                android:layout_below="@+id/formLayout"
+                android:layout_marginTop="10dp" >
+
+
+                <View
+                    android:layout_width="240dp"
+                    android:layout_height="1dp"
+                    android:background="@android:color/holo_blue_dark"
+                    android:id="@+id/dividerLine"
+                    android:layout_below="@+id/saveButton"
+                    android:layout_marginTop="25dp"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="You Entered"
+                    android:id="@+id/textView4"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp" />
+
+                <TextView
                     android:layout_marginTop="5dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -174,7 +176,7 @@
                     android:layout_width="wrap_content"
                     android:layout_gravity="center_horizontal" />
 
-            <TextView
+                <TextView
                     android:layout_marginTop="5dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -183,7 +185,7 @@
                     android:layout_width="wrap_content"
                     android:layout_gravity="center_horizontal" />
 
-            <TextView
+                <TextView
                     android:layout_marginTop="5dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -193,16 +195,19 @@
                     android:layout_gravity="center_horizontal" />
 
 
-            <TextView
-                android:layout_marginTop="5dp"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Landline or Cell"
-                android:id="@+id/landOrCellTextView"
-                android:layout_width="wrap_content"
-                android:layout_gravity="center_horizontal" />
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Landline or Cell"
+                    android:id="@+id/landOrCellTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal" />
 
-        </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
 </RelativeLayout>

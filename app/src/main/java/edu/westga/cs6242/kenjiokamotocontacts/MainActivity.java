@@ -37,6 +37,7 @@ public class MainActivity extends ActionBarActivity {
 
         ViewGroup results =  (ViewGroup) findViewById(R.id.resultsDisplay);
         results.setVisibility(View.VISIBLE);
+        this.hideForm();
     }
 
     private String getLineType() {
@@ -49,6 +50,11 @@ public class MainActivity extends ActionBarActivity {
             result = "Cell Phone";
         }
         return result;
+    }
+
+    private void hideForm() {
+        ViewGroup results =  (ViewGroup) findViewById(R.id.formLayout);
+        results.setVisibility(View.GONE);
     }
 
     @Override

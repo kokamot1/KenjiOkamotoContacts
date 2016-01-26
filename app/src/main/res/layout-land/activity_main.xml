@@ -24,7 +24,7 @@
         android:layout_height="match_parent">
 
         <RelativeLayout
-            android:layout_width="350dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/formLayout">
 
@@ -40,7 +40,7 @@
                 android:gravity="right"/>
 
             <EditText
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:ems="10"
@@ -64,7 +64,7 @@
                 android:layout_marginTop="20dp" />
 
             <EditText
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:ems="10"
@@ -86,7 +86,7 @@
                 android:layout_marginTop="20dp" />
 
             <EditText
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="phone"
                 android:ems="10"
@@ -96,49 +96,49 @@
                 android:layout_alignLeft="@+id/emailEditText"
                 android:layout_alignStart="@+id/emailEditText" />
 
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/radioGroup"
+                android:layout_marginLeft="47dp"
+                android:layout_marginStart="47dp"
+                android:layout_toRightOf="@+id/nameEditText"
+                android:layout_toEndOf="@+id/nameEditText">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cell"
+                    android:id="@+id/cellBtn"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LandLine"
+                    android:id="@+id/landlineBtn"
+                    android:layout_weight="1"
+                    android:layout_below="@+id/formLayout"
+                    android:layout_toRightOf="@+id/radioGroup"
+                    android:layout_toEndOf="@+id/radioGroup"
+                    android:layout_marginTop="10dp" />
+            </RadioGroup>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:id="@+id/saveButton"
+                android:onClick="onSaveButtonClick"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignLeft="@+id/radioGroup"
+                android:layout_alignStart="@+id/radioGroup"
+                android:layout_below="@+id/radioGroup"
+                android:layout_marginTop="15dp" />
+
         </RelativeLayout>
-
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/radioGroup"
-            android:layout_alignTop="@+id/formLayout"
-            android:layout_toRightOf="@+id/formLayout"
-            android:layout_toEndOf="@+id/formLayout"
-            android:layout_marginLeft="31dp"
-            android:layout_marginStart="31dp">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cell"
-                android:id="@+id/cellBtn"
-                android:layout_weight="1" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="LandLine"
-                android:id="@+id/landlineBtn"
-                android:layout_weight="1"
-                android:layout_below="@+id/formLayout"
-                android:layout_toRightOf="@+id/radioGroup"
-                android:layout_toEndOf="@+id/radioGroup"
-                android:layout_marginTop="10dp" />
-        </RadioGroup>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Save"
-            android:id="@+id/saveButton"
-            android:onClick="onSaveButtonClick"
-            android:layout_gravity="center_horizontal"
-            android:layout_below="@+id/radioGroup"
-            android:layout_alignRight="@+id/radioGroup"
-            android:layout_alignEnd="@+id/radioGroup"
-            android:layout_marginTop="10dp" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -212,6 +212,7 @@
                 android:layout_marginTop="10dp" />
 
         </RelativeLayout>
+
     </RelativeLayout>
 
     <!--</LinearLayout>-->
